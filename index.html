@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoket</title>
+</head>
+<body>
+<!-- 
+    <input type="text" id="input1">
+    <button onclick="sendHit()">Click</button> -->
+    <!-- <h1>My First shoket </h1> -->
+    <h2 id="megId1"> h</h2>
+
+
+    <script src="/socket.io/socket.io.js">
+    </script>
+    <!-- <script>
+        let socket =io()
+        socket.on('myEvent',(meg)=>{
+            // document.write(meg)
+            document.getElementById('megId1').innerHTML = ''
+            document.getElementById('megId1').innerHTML = meg
+        })
+    </script> -->
+
+    
+    <!-- <script>
+        /// Now send the data client side to server side////
+        let socket = io()
+
+        function sendHit(){
+           let inputValue= document.getElementById('input1').value;
+            // alert("=="+inputValue)
+            socket.emit('myEvent',inputValue)
+        }
+    </script> -->
+
+    <script>
+        let socket = io('/buy')
+        socket.on('MyBrodCast', (msg)=>{
+            document.getElementById('megId1').innerHTML = msg
+        })
+    </script>
+    
+</body>
+</html>
