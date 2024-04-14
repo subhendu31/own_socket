@@ -122,10 +122,12 @@ io.on('connection', (socket) => {
             );
         }
     });
-    // console.log("new user connected");
-    // socket.on('chat message', (msg) => {
-    //     io.emit('chat message', msg);
-    // });
+    console.log("new user connected");
+    socket.on('client_side', (msg) => {
+        console.log("socket message",msg);
+        io.emit('client_side', msg);
+
+    });
 });
 
 /*
